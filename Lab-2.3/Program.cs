@@ -14,10 +14,10 @@ namespace Lab_2._3
                 //have a maximum length of 30.
 
                 {
-                    Console.Write("Please enter first and last name: ");
+                    Console.Write("Please enter first name: ");
 
                     string name = Console.ReadLine();
-                    string pattern = @"^([A-z'-]+\s+){1,2}[A-z'-]+$";
+                    string pattern = @"^[A-Z]{1}[A-z'-]{1,29}$";
 
                     bool validate = RegexValidate(name, pattern);
                     Console.WriteLine(validate);
@@ -26,7 +26,7 @@ namespace Lab_2._3
                     Console.Write("Please enter email address: ");
 
                     string email = Console.ReadLine();
-                    pattern = @"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
+                    pattern = @"^([A-z]{5,30}\@)[A-z]{5,10}(\.\w{2,3})$";
 
                     validate = RegexValidate(email, pattern);
                     Console.WriteLine(validate);
@@ -35,7 +35,7 @@ namespace Lab_2._3
                     Console.Write("Please enter phone number: ");
 
                     string phoneNumber = Console.ReadLine();
-                    pattern = @"^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$";
+                    pattern = @"^\d{3}(\s?-?\s?)\d{3}(\s?-?\s?)\d{4}$";
 
                     validate = RegexValidate(phoneNumber, pattern);
                     Console.WriteLine(validate);
@@ -44,7 +44,7 @@ namespace Lab_2._3
                     Console.Write("Please enter date: ");
 
                     string date = Console.ReadLine();
-                    pattern = @"^(((0[1-9]|[12][0-9]|3[01])[- /.](0[13578]|1[02])|(0[1-9]|[12][0-9]|30)[- /.](0[469]|11)|(0[1-9]|1\d|2[0-8])[- /.]02)[- /.]\d{4}|29[- /.]02[- /.](\d{2}(0[48]|[2468][048]|[13579][26])|([02468][048]|[1359][26])00))$";
+                    pattern = @"^\d{2}\/\d{2}\/\d{4}$";
 
                     validate = RegexValidate(date, pattern);
                     Console.WriteLine(validate);
